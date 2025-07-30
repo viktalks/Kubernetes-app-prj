@@ -1,7 +1,7 @@
 
 # 🚀 Dockerize & Deploy on AKS - Assignment 3
 
-This project shows how to containerize a simple Node.js app and deploy it to Azure Kubernetes Service (AKS) using Kubernetes manifests and optional Helm templating.
+This project shows how to containerize a simple Node.js app and deploy it to Azure Kubernetes Service (AKS) using Kubernetes manifests.
 
 ---
 
@@ -17,8 +17,6 @@ aks-docker-k8s-deploy/
 │   ├── service.yaml
 │   ├── configmap.yaml
 │   └── secret.yaml
-├── helm-chart/         # Optional Helm chart
-│   └── basic-app/
 ├── README.md
 ```
 
@@ -31,9 +29,9 @@ graph TD
   A[Node.js App] --> B[Docker Container]
   B --> C[DockerHub]
   C --> D[AKS Deployment]
-  D --> E[Service (LoadBalancer)]
+  D --> E[Service LoadBalancer]
   E --> F[Public IP]
-  D --> G[ConfigMap & Secret]
+  D --> G[ConfigMap and Secret]
 ```
 
 ---
@@ -88,15 +86,6 @@ kubectl delete -f k8s/
 
 ---
 
-## 🎁 Bonus (Helm)
-
-```bash
-cd helm-chart/basic-app/
-helm install my-app .
-```
-
----
-
 ## 🔐 Tech Stack
 
 - Node.js + Express
@@ -104,4 +93,3 @@ helm install my-app .
 - Kubernetes
 - Azure AKS
 - ConfigMap & Secret
-- Helm (optional)
